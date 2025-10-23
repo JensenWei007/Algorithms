@@ -1,5 +1,5 @@
 WEBSITE:= luogu
-PROBLEM:= P5594
+PROBLEM:= P5015
 
 test:
 	@clear
@@ -60,5 +60,5 @@ done:
 	fi
 	@git add .
 	@git commit -s -m "${WEBSITE} ${PROBLEM}"
-	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Done!/"
+	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Done!"
 
