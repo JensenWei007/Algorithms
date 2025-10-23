@@ -1,5 +1,5 @@
 WEBSITE:= luogu
-PROBLEM:= P1427
+PROBLEM:= P2141
 
 test:
 	@clear
@@ -22,13 +22,13 @@ test:
 	@find ./now -type f ! -name '*.cpp' ! -name '*.in' -exec rm -f {} +
 
 new:
-	touch ./now/${PROBLEM}.cpp; \
-	echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new file ./now/${PROBLEM}.cpp"; \
+	@touch ./now/${PROBLEM}.cpp
+	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new file ${PROBLEM}.cpp"
 	@for i in 1 2 3 4 5; do \
 		touch ./now/$$i.in; \
-		echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new file ./now/$$i.in"; \
+		echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new file $$i.in"; \
 	done
-	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new problem files for \033[1;34m${PROBLEM}\033[0m in ./now/"
+	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Created new problem files for \033[1;34m${PROBLEM}\033[0m "
 
 done:
 	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Archiving files for ${PROBLEM}"
@@ -58,4 +58,7 @@ done:
 		find ./now -type f -delete 2>/dev/null || true; \
 		echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Cleared directory!"; \
 	fi
+	@git add .
+	@git commit -s -m "${WEBSITE} ${PROBLEM}"
 	@echo "\033[1;36m[ALGORITHM]\033[0m \033[1;32m[INFO]\033[0m Done!/"
+
