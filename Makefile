@@ -1,5 +1,5 @@
 WEBSITE:= luogu
-PROBLEM:= P1434
+PROBLEM:= P1120
 
 test:
 	@clear
